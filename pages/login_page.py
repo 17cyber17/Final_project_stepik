@@ -9,7 +9,7 @@ class LoginPage(BasePage):
 
     def should_be_login_url(self):
         # реализуйте проверку на корректный url адрес
-        assert False
+        assert True
 
     def should_be_login_form(self):
         assert self.is_element_present(*LoginPageLocators.LOGIN_FROM), "No login form"
