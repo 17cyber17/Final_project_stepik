@@ -14,7 +14,7 @@ class ProductPage(BasePage):
             "Message about adding is not presented")
         product_name = self.browser.find_element(*ProductPageLocators.PRODUCT_NAME).text
         message = self.browser.find_element(*ProductPageLocators.MESSAGE_ABOUT_ADDING).text
-        assert product_name in message, "No product name in the message"
+        assert product_name == message, "No product name in the message"
 
     def should_be_message_basket_total(self):
         assert self.is_element_present(*ProductPageLocators.MESSAGE_BASKET_TOTAL), (
@@ -23,7 +23,7 @@ class ProductPage(BasePage):
             "Product price is not presented")
         message_basket_total = self.browser.find_element(*ProductPageLocators.MESSAGE_BASKET_TOTAL).text
         product_price = self.browser.find_element(*ProductPageLocators.PRODUCT_PRICE).text
-        assert product_price in message_basket_total, "No product price in the message"
+        assert product_price == message_basket_total, "No product price in the message"
 
     def add_to_basket(self):
         basket_btn = self.browser.find_element(*ProductPageLocators.BASKET_BTN)
