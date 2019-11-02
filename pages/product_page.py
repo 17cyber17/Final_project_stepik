@@ -28,3 +28,11 @@ class ProductPage(BasePage):
     def add_to_basket(self):
         basket_btn = self.browser.find_element(*ProductPageLocators.BASKET_BTN)
         basket_btn.click()
+
+    def should_not_be_success_message(self):
+        assert self.is_not_element_present(*ProductPageLocators.SUCCESS_MESSAGE), \
+        "Success message is presented, but should not be"
+
+    def success_message_disappearance_check(self):
+        assert self.is_disappeared(*ProductPageLocators.SUCCESS_MESSAGE), \
+        "success message did not disappear"
