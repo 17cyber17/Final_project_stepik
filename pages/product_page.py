@@ -30,9 +30,9 @@ class ProductPage(BasePage):
         basket_btn.click()
 
     def should_not_be_success_message(self):
-        assert self.is_not_element_present(*ProductPageLocators.SUCCESS_MESSAGE), \
+        assert self.is_not_element_present(*ProductPageLocators.MESSAGE_ABOUT_ADDING), \
         "Success message is presented, but should not be"
 
     def success_message_disappearance_check(self):
-        assert self.is_disappeared(*ProductPageLocators.SUCCESS_MESSAGE), \
+        assert self.is_disappeared(*ProductPageLocators.MESSAGE_ABOUT_ADDING), \
         "success message did not disappear"
